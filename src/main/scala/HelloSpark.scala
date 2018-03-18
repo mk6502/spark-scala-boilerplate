@@ -1,9 +1,9 @@
 import org.apache.spark.sql.{Row, SparkSession}
 import org.apache.spark.sql.types._
 
-object SimpleApp {
+object HelloSpark {
   def main(args: Array[String]) {
-    val spark = SparkSession.builder.appName("hello world").getOrCreate()
+    val spark = SparkSession.builder.appName("hello spark").getOrCreate()
 
     val rows = Seq(
       Row(1, "hello"),
@@ -11,8 +11,8 @@ object SimpleApp {
     )
 
     val schema = StructType(List(
-      StructField("number", IntegerType, true),
-      StructField("word", StringType, true)
+      StructField("number", IntegerType, nullable = true),
+      StructField("word", StringType, nullable = true)
     ))
 
     val df = spark.createDataFrame(
@@ -20,6 +20,7 @@ object SimpleApp {
       schema
     )
 
+    println("count: ")
     println(df.count())
 
     spark.stop()
