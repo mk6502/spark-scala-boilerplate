@@ -4,6 +4,8 @@ This contains enough boilerplate code to get you started with Apache Spark 2.3.0
 If you need to use a different version of Spark, change `build.sbt`. This project should work for any version of
 Apache Spark 2.0.0 or greater.
 
+If you need to use Spark 1.6.x, this project will not work for you. See this instead: https://github.com/mikestaszel/spark-1.6-scala-boilerplate
+
 ## Building ##
 Run the following:
 
